@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Enumeracoes.Entities;
+using Enumeracoes.Entities.Enums;
+using System;
 
 namespace Enumeracoes
 {
@@ -6,7 +8,16 @@ namespace Enumeracoes
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Order order = new Order {
+                Id = 1080,
+                Moment = System.DateTime.Now,
+                Status = OrderStatus.PendingPayment    
+            
+            };
+
+            Console.WriteLine(order);
+
+
         }
     }
 }

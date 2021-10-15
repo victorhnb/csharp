@@ -1,5 +1,6 @@
 ﻿using ExercicioComposicao.Enums;
 using System;
+using System.Globalization;
 
 namespace ExercicioComposicao
 {
@@ -21,9 +22,21 @@ namespace ExercicioComposicao
             string level = Console.ReadLine();
             WorkerLevel wl = Enum.Parse<WorkerLevel>(level);
             Console.WriteLine("Base Salary: ");
-            double baseSalary = double.Parse(Console.ReadLine());
+            double baseSalary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             Console.WriteLine("How many contracts to this worker? ");
             int contracts = int.Parse(Console.ReadLine());
+
+            for (int i=1; i <= contracts; i++)
+            {
+                Console.WriteLine("Enter " +i+ "# data contract: " );
+                DateTime date = new DateTime();
+                date = DateTime.Parse(Console.ReadLine());
+                Console.WriteLine("Value per hour: ");
+                double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.WriteLine("Duration per hour: ");
+                double durationPerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            }
 
 
 

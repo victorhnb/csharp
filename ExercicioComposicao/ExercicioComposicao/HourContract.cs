@@ -18,7 +18,11 @@ namespace ExercicioComposicao
 
         public override string ToString()
         {
-            return " Date: " + Date.ToString("MMMM/yyyy") + "\n" + "Value Per Hour: " + ValuePerHour + "\n" + "Hours: " + Hours;
+
+
+            return "\n" + "------------------" + "\nContract: "+ 
+                "\n" + "Date: " + Date.ToString("MMMM/yyyy") + 
+                "\n" + "Value Per Hour: " + ValuePerHour + "\n" + "Hours: " + Hours;
         }
     }
 }

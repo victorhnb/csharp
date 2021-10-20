@@ -1,5 +1,6 @@
 ﻿using ExercicioComposicao.Enums;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace ExercicioComposicao
@@ -26,18 +27,38 @@ namespace ExercicioComposicao
             Console.WriteLine("How many contracts to this worker? ");
             int contracts = int.Parse(Console.ReadLine());
 
+            DateTime date;
+            double valuePerHour;
+            double durationPerHour;
+            List <HourContract> contractWorker = null;
+
             for (int i=1; i <= contracts; i++)
             {
                 Console.WriteLine("Enter " +i+ "# data contract: " );
-                DateTime date = new DateTime();
+                date = new DateTime();
                 date = DateTime.Parse(Console.ReadLine());
                 Console.WriteLine("Value per hour: ");
-                double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                 Console.WriteLine("Duration per hour: ");
-                double durationPerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                durationPerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                contractWorker = new List<HourContract>();
+                contractWorker.Add(new HourContract(date, valuePerHour, durationPerHour));
 
             }
 
+            foreach (var item in contractWorker)
+            {
+                Console.WriteLine(item);
+            }
+
+
+           /*
+            
+            Console.WriteLine("Enter month and year to calculate income (MM/YYYY)");
+            DateTime dt1 = new DateTime();
+            dt1 = DateTime.Parse(Console.ReadLine());
+           */
 
 
 

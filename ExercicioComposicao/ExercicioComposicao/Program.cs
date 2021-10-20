@@ -30,7 +30,7 @@ namespace ExercicioComposicao
             DateTime date;
             double valuePerHour;
             double durationPerHour;
-            List <HourContract> contractWorker = null;
+            List <HourContract> contractWorker = contractWorker = new List<HourContract>();
 
             for (int i=1; i <= contracts; i++)
             {
@@ -42,7 +42,6 @@ namespace ExercicioComposicao
                 Console.WriteLine("Duration per hour: ");
                 durationPerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-                contractWorker = new List<HourContract>();
                 contractWorker.Add(new HourContract(date, valuePerHour, durationPerHour));
 
             }

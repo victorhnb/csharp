@@ -15,6 +15,11 @@ namespace ExercicioComposicao
             Hours = hours;
         }
 
+        public double totalValue()
+        {
+            return Hours * ValuePerHour;
+        }
+
 
         public override string ToString()
         {

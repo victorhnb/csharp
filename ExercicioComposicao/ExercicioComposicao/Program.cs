@@ -13,7 +13,6 @@ namespace ExercicioComposicao
             // Le o departamento
             Console.WriteLine("Enter Department Name: ");
             string dpName = Console.ReadLine();
-            Department dp = new Department(dpName);
 
             //Entrada com os dados do trabalhador
             Console.WriteLine("Enter worker data: ");
@@ -27,39 +26,36 @@ namespace ExercicioComposicao
             Console.WriteLine("How many contracts to this worker? ");
             int contracts = int.Parse(Console.ReadLine());
 
-            DateTime date;
-            double valuePerHour;
-            double durationPerHour;
-            List <HourContract> contractWorker = contractWorker = new List<HourContract>();
+            Department dp = new Department(dpName);
+            Worker worker = new Worker(name, baseSalary, wl, dp);
+
+
 
             for (int i=1; i <= contracts; i++)
             {
                 Console.WriteLine("Enter " +i+ "# data contract: " );
-                date = new DateTime();
+                DateTime date = new DateTime();
                 date = DateTime.Parse(Console.ReadLine());
                 Console.WriteLine("Value per hour: ");
-                valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                 Console.WriteLine("Duration per hour: ");
-                durationPerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                double durationPerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-                contractWorker.Add(new HourContract(date, valuePerHour, durationPerHour));
+                HourContract contract = new HourContract(date, valuePerHour, durationPerHour);
+                worker.AddContract(contract);
 
             }
 
-            foreach (var item in contractWorker)
-            {
-                Console.WriteLine(item);
-            }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.Write("Enter mounth and year to calculate income (MM/YYYY): " );
+            string monthAndYear = Console.ReadLine();
+            int month = int.Parse(monthAndYear.Substring(0, 2));
+            int year = int.Parse(monthAndYear.Substring(3));
 
-
-           /*
-            
-            Console.WriteLine("Enter month and year to calculate income (MM/YYYY)");
-            DateTime dt1 = new DateTime();
-            dt1 = DateTime.Parse(Console.ReadLine());
-           */
-
-
+            Console.WriteLine("Name: " + worker.Name);
+            Console.WriteLine("Department: " + worker.Department.Name);
+            Console.WriteLine("Income for" + monthAndYear + " :" + worker.Income(year, month));
 
 
 

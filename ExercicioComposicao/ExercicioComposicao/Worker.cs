@@ -7,13 +7,13 @@ namespace ExercicioComposicao
     class Worker
     {
         public string  Name { get; set; }
-        public int BaseSalary { get; set; }
+        public double BaseSalary { get; set; }
         public WorkerLevel Level { get; set; }
         public Department Department { get; set; }
 
         public List<HourContract> Contracts { get; set; } = new List<HourContract>();
 
-        public Worker(string name, int baseSalary, WorkerLevel level, Department department)
+        public Worker(string name, double baseSalary, WorkerLevel level, Department department)
         {
             Name = name;
             BaseSalary = baseSalary;
@@ -33,7 +33,16 @@ namespace ExercicioComposicao
 
         public double Income(int year, int month)
         {
-            return 0;
+            double sum = BaseSalary;
+            foreach (HourContract contract in Contracts)
+            {
+                if (contract.Date.Year == year && contract.Date.Month == month)
+                {
+                    sum += contract.TotalValue();
+                }
+            }
+            return sum;
         }
     }
-}
+    }
+

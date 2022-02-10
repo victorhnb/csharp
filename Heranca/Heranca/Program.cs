@@ -15,7 +15,12 @@ namespace Heranca
             // UPCASTING 
             Account acc1 = bacc;
             Account acc2 = new BusinessAccount(1003, "Bob", 0.0, 200.0);
-            Account acc3 = new BusinessAccount(1003, "Anna", 0.0, 0.01);
+            Account acc3 = new SavingsAccount(1003, "Anna", 0.0, 0.01);
+
+            //DOWNCASTING
+            BusinessAccount acc4 = (BusinessAccount)acc2;
+            acc4.Loan(300.0);
+
 
 
         }

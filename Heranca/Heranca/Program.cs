@@ -21,6 +21,16 @@ namespace Heranca
             BusinessAccount acc4 = (BusinessAccount)acc2;
             acc4.Loan(300.0);
 
+            if (acc4 is SavingsAccount)
+            {
+                Console.WriteLine("Is SavingsAccounts");
+            }
+
+            else
+            {
+                Console.WriteLine("Not SavingsAccount");
+            }
+
 
 
         }

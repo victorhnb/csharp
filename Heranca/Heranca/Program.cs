@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Heranca.Entities;
+using System;
 
 namespace Heranca
 {
@@ -6,7 +7,14 @@ namespace Heranca
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            Account acc = new Account(1001, "Alex", 0.0);
+            BusinessAccount bacc = new BusinessAccount(1002, "Maria", 500.0);
+
+
+            // UPCASTING 
+            Account acc1 = bacc;
+
         }
     }
 }

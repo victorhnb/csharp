@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace ClassesMetodoSelados.Entities
 {
-    class Account
+    class SavingsAccountEnterprise
     {
 
-        public virtual int ReturnTest()
-        {
-            return 0;
-        }
+        
 
     }
 }

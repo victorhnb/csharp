@@ -8,5 +8,10 @@ namespace ClassesMetodoSelados.Entities
 {
     class SavingsAccountPlus : Account
     {
+
+        sealed public override int ReturnTest()
+        {
+            return base.ReturnTest();
+        }
     }
 }

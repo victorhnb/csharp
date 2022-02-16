@@ -29,7 +29,10 @@ namespace Heranca.Entities
 
         public override void withDraw(double amount)
         {
-            Balance -= amount;
+
+            // palavra base chama o metodo na superclasse 
+            base.withDraw(amount);
+            Balance -= 2;
         }
 
 

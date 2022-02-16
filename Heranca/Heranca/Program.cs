@@ -31,6 +31,17 @@ namespace Heranca
                 Console.WriteLine("Not SavingsAccount");
             }
 
+            // Usando Sobreposicao
+
+            Account sbp1 = new Account(1001, "Alex", 500.0);
+            Account sbp2 = new SavingsAccount(1002, "Ana", 500.0, 0.01);
+
+            sbp1.withDraw(10.0);
+            sbp2.withDraw(10.0);
+
+            Console.WriteLine(sbp1.Balance);
+            Console.WriteLine(sbp2.Balance);
+
 
 
         }

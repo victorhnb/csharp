@@ -20,9 +20,11 @@ namespace Heranca.Entities
             Balance = balance;
         }
 
-        public void withDraw (double amount)
+
+        //palavra virtual diz que o metodo pode ser sobrescrito 
+        public virtual void withDraw (double amount)
         {
-            Balance -= amount;
+            Balance -= amount + 5;
         }
 
         public void Deposit (double amount)

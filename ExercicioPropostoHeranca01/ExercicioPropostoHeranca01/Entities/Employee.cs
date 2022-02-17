@@ -23,7 +23,7 @@ namespace ExercicioPropostoHeranca01.Entities
             ValuePerHour = valuePerHour;
         }
 
-        protected double payment()
+        public virtual double payment()
         {
             return Hours * ValuePerHour;
         }

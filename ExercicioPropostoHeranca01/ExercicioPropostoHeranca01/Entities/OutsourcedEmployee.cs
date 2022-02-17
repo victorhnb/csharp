@@ -11,7 +11,7 @@ namespace ExercicioPropostoHeranca01.Entities
         {
         }
 
-        public OutsourcedEmployee(string name, int hours, int valuePerHour, double additionalcharge) : base(name, hours, valuePerHour)
+        public OutsourcedEmployee(string name, int hours, double valuePerHour, double additionalcharge) : base(name, hours, valuePerHour)
         {
             additionalCharge = additionalcharge;
 
@@ -20,6 +20,11 @@ namespace ExercicioPropostoHeranca01.Entities
         public override double payment()
         {
             return base.payment() + (additionalCharge * 0.110);
+        }
+
+        public override string ToString()
+        {
+            return Name + " " + "-" + "$ " + payment();
         }
 
     }

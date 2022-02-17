@@ -10,13 +10,13 @@ namespace ExercicioPropostoHeranca01.Entities
     {
         public string Name { get; set; }
         public int Hours { get; set; }
-        public int ValuePerHour { get; set; }
+        public double ValuePerHour { get; set; }
 
         public Employee()
         {
         }
 
-        public Employee(string name, int hours, int valuePerHour)
+        public Employee(string name, int hours, double valuePerHour)
         {
             Name = name;
             Hours = hours;
@@ -26,6 +26,12 @@ namespace ExercicioPropostoHeranca01.Entities
         public virtual double payment()
         {
             return Hours * ValuePerHour;
+        }
+
+
+        public override string ToString()
+        {
+            return Name + " " + "-" + "$ " + payment();
         }
 
     }

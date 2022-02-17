@@ -22,5 +22,11 @@ namespace ExercicioPropostoHeranca01.Entities
             Hours = hours;
             ValuePerHour = valuePerHour;
         }
+
+        protected double payment()
+        {
+            return Hours * ValuePerHour;
+        }
+
     }
 }

@@ -19,13 +19,9 @@ namespace ExercicioPropostoHeranca01.Entities
 
         public override double payment()
         {
-            return base.payment() + (additionalCharge * 0.110);
+            return base.payment() + 1.1 * additionalCharge;
         }
 
-        public override string ToString()
-        {
-            return Name + " " + "-" + "$ " + payment();
-        }
-
+       
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ExercicioPropostoHeranca01.Entities;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace ExercicioPropostoHeranca01
 {
@@ -10,7 +11,7 @@ namespace ExercicioPropostoHeranca01
 
 
         {
-            List<Employee> employee;
+            List<Employee> employee = new List<Employee>();
             
             Console.Write("Enter the number of employees: ");
             int employeesNumber = int.Parse(Console.ReadLine());
@@ -20,40 +21,35 @@ namespace ExercicioPropostoHeranca01
                 Console.WriteLine("Employee " + i + "#" + " data:");
                 Console.WriteLine("Outsorced? (y/n)");
                 char employeeType = char.Parse(Console.ReadLine());
-                if (employeeType == 'n')
-                {
+                
                     Console.Write("Name: ");
                     string name = Console.ReadLine();
                     Console.Write("Hours: ");
                     int hours = int.Parse(Console.ReadLine());
                     Console.Write("Valuer per hour: ");
                     double valuePerHour = double.Parse(Console.ReadLine());
-
-                    employee = new List<Employee>();
-                    employee.Add(new Employee(name, hours, valuePerHour));
-
-                }
-                else
+                    
+                    if (employeeType == 'y')
                 {
-                    Console.Write("Name: ");
-                    string name = Console.ReadLine();
-                    Console.Write("Hours: ");
-                    int hours = int.Parse(Console.ReadLine());
-                    Console.Write("Valuer per hour: ");
-                    double valuePerHour = double.Parse(Console.ReadLine());
-                    Console.Write("Additional Charge: ");
+                    Console.Write("Additional charge: ");
                     double additionalCharge = double.Parse(Console.ReadLine());
-
-                    employee =  new List<OutsourcedEmployee>();
                     employee.Add(new OutsourcedEmployee(name, hours, valuePerHour, additionalCharge));
-
                 }
-
-                foreach (var item in employee)
+                                   
+                    else
                 {
-                    Console.WriteLine(employee);
+                    employee.Add(new Employee(name, hours, valuePerHour));
                 }
+                            
 
+              
+            }
+
+            Console.WriteLine("\nPAYMENT: \n");
+
+            foreach (var item in employee)
+            {
+                Console.WriteLine(item.Name + " - " + "$" + item.payment().ToString("F2", CultureInfo.InvariantCulture));
             }
 
         }

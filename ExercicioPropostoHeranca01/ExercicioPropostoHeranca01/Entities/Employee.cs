@@ -29,10 +29,6 @@ namespace ExercicioPropostoHeranca01.Entities
         }
 
 
-        public override string ToString()
-        {
-            return Name + " " + "-" + "$ " + payment();
-        }
-
+       
     }
 }

@@ -27,12 +27,12 @@ namespace ExercicioPropostoHeranca01
                     Console.Write("Hours: ");
                     int hours = int.Parse(Console.ReadLine());
                     Console.Write("Valuer per hour: ");
-                    double valuePerHour = double.Parse(Console.ReadLine());
+                    double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                     
                     if (employeeType == 'y')
                 {
                     Console.Write("Additional charge: ");
-                    double additionalCharge = double.Parse(Console.ReadLine());
+                    double additionalCharge = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                     employee.Add(new OutsourcedEmployee(name, hours, valuePerHour, additionalCharge));
                 }
                                    

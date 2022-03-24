@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 
 namespace ExePropostoHerancaPolimorfismo.Entities
 {
@@ -21,8 +18,7 @@ namespace ExePropostoHerancaPolimorfismo.Entities
 
         public override string priceTag()
         {
-            return base.priceTag() + "\n" + 
-            base.Name + " (used) " + " $ " + base.Price + " (Manufcture Date: " + manufactureDate ;
+           return base.Name + " (used) " + " $ " + base.Price.ToString("F2", CultureInfo.InvariantCulture) + " (Manufacture Date: " + manufactureDate.ToString("dd/MM/yyyy") + ")";
         }
     }
 }

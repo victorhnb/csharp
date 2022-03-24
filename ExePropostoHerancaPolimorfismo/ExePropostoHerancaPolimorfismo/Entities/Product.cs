@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace ExePropostoHerancaPolimorfismo.Entities
 {
@@ -23,9 +19,7 @@ namespace ExePropostoHerancaPolimorfismo.Entities
 
         public virtual string priceTag()
         {
-            return "PRICE TAGS: \n" +
-            Name + "$ " + Price;    
-
+            return Name + " $ " + Price.ToString("F2", CultureInfo.InvariantCulture); 
         }
 
     }

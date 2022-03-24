@@ -1,4 +1,5 @@
-﻿namespace ExePropostoHerancaPolimorfismo.Entities
+﻿using System.Globalization;
+namespace ExePropostoHerancaPolimorfismo.Entities
 {
     class ImportedProduct : Product
     {
@@ -20,8 +21,7 @@
 
         public override string priceTag()
         {
-            return base.priceTag() + 
-              base.Name + " $ " + base.Price + " Customs Free: " + customsFee;
+          return  base.Name + " $ " + totalPrice().ToString("F2", CultureInfo.InvariantCulture) + "(Customs fee: " + customsFee.ToString("F2", CultureInfo.InvariantCulture) + ")";
         }
     }
 }

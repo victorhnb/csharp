@@ -17,5 +17,11 @@
         {
             return base.Price + customsFee;
         }
+
+        public override string priceTag()
+        {
+            return base.priceTag() + 
+              base.Name + " $ " + base.Price + " Customs Free: " + customsFee;
+        }
     }
 }

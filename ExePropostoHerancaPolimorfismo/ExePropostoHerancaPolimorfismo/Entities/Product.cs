@@ -21,7 +21,7 @@ namespace ExePropostoHerancaPolimorfismo.Entities
             Price = price;
         }
 
-        public string priceTag()
+        public virtual string priceTag()
         {
             return "PRICE TAGS: \n" +
             Name + "$ " + Price;    

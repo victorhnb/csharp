@@ -21,7 +21,6 @@ namespace Course
             }
 
             Console.WriteLine(sum);
-
-        }
+                    }
     }
 }

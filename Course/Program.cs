@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Course.Entities;
 
 namespace Course
@@ -7,14 +8,19 @@ namespace Course
     {
         static void Main(string[] args)
         {
-            Account acc1 = new Account(1001, "Alex", 500.0);
-            Account acc2 = new SavingsAccount(1002, "Anna", 500.0, 0.01);
+            List<Account> list = new List<Account>();
 
-            acc1.Withdraw(10.0);
-            acc2.Withdraw(10.0);
+            list.Add(new SavingsAccount(1001, "Alex", 500.0, 0.01));
+            list.Add(new BusinessAccount(1002, "Maria", 500.0, 400));
 
-            Console.WriteLine(acc1.Balance);
-            Console.WriteLine(acc2.Balance);
+            double sum = 0.0;
+
+            foreach (Account acc in list)
+            {
+                sum += acc.Balance;
+            }
+
+            Console.WriteLine(sum);
         }
     }
 }

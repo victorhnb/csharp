@@ -1,23 +1,24 @@
 ﻿
 
+using ExeMetodosAbstratos01.Enums;
+
 namespace ExeMetodosAbstratos01.Entities
 {
-    class Rectangle
+    class Rectangle : Shape
     {
 
-        public double width { get; set; }
-        public double height { get; set; }
+        public double Width { get; set; }
+        public double Height { get; set; }
 
-        public Rectangle()
+        public Rectangle (double width, double height, Color color) : base (color)   
         {
+            this.Width = width;
+            this.Height = height;
         }
 
-        public Rectangle(double width, double height)
+        public override double Area()
         {
-            this.width = width;
-            this.height = height;
+            return Width * Height;
         }
-
-
     }
 }

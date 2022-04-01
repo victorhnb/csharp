@@ -18,15 +18,25 @@ namespace ExeMetodosAbstratos02.Entities
 
         public override double TaxesPaid()
         {
-            if (base.AnualIncome < 20000.00)
+            if (base.AnualIncome < 20000.00 && this.HealthExpenditure > 0.0)
             {
-                return 20000.00 * 0.15;
+                return (base.AnualIncome * 0.15) - (this.HealthExpenditure * 0.50);
             }
 
+            else if (base.AnualIncome < 20000.00 && this.HealthExpenditure <= 0 + 0)
+            {
+                return (base.AnualIncome * 0.15);
+            }
+
+            else if (base.AnualIncome >= 20000.00 && this.HealthExpenditure > 0.0)
+            {
+                return (base.AnualIncome * 0.25) - (this.HealthExpenditure * 0.50);
+            }   
+            
             else
             {
-                return (base.AnualIncome - 0.25) - (this.HealthExpenditure * 0.50);
-            }         
+                return (base.AnualIncome * 0.25);
+            }
         }
 
 

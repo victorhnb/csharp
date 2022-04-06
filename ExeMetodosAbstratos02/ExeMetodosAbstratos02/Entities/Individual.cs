@@ -9,9 +9,9 @@ namespace ExeMetodosAbstratos02.Entities
     class Individual : Payer
     {
 
-        public int HealthExpenditure { get; set; }
+        public double HealthExpenditure { get; set; }
 
-        public Individual(string name, double anualIncome, int healthExpenditure) : base(name, anualIncome)
+        public Individual(string name, double anualIncome, double healthExpenditure) : base(name, anualIncome)
         {
             HealthExpenditure = healthExpenditure;
         }

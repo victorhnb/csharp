@@ -52,7 +52,7 @@ namespace ExeMetodosAbstratos02
                           
            
 
-            Console.Write("\nTOTAL TAXES $ " + sum.ToString("F2", CultureInfo.InvariantCulture));
+            Console.Write("\nTOTAL TAXES $ " + sum.ToString("F2", CultureInfo.InvariantCulture)+ "\n");
 
                 
 

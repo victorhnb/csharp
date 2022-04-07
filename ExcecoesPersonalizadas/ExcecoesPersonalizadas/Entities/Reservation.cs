@@ -1,4 +1,5 @@
 ﻿using System;
+using ExcecoesPersonalizadas.Exceptions;
 
 namespace ExcecoesPersonalizadas.Entities
 {
@@ -15,6 +16,12 @@ namespace ExcecoesPersonalizadas.Entities
 
         public Reservation(int roomNumber, DateTime checkIn, DateTime checkOut)
         {
+
+            if (checkOut <= checkIn)
+            {
+                throw new DomainException("Check-out date must be after check-in date");
+            }
+
             RoomNumber = roomNumber;
             CheckIn = checkIn;
             CheckOut = checkOut;
@@ -26,22 +33,21 @@ namespace ExcecoesPersonalizadas.Entities
             return (int)duration.TotalDays;
         }
 
-        public string UpdateDates(DateTime checkIn, DateTime checkOut)
+        public void UpdateDates(DateTime checkIn, DateTime checkOut)
         {
 
             DateTime now = DateTime.Now;
             if (checkIn < now || checkOut < now)
             {
-                return "Reservation dates for update must be future dates";
+                throw new DomainException("Reservation dates for update must be future dates");
             }
             else if (checkOut <= checkIn)
             {
-                return "Check-out date must be after check-in date";
+                throw new DomainException("Check-out date must be after check-in date");
             }
 
             CheckIn = checkIn;
             CheckOut = checkOut;
-            return null;
         }
 
         public override string ToString()

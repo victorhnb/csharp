@@ -20,6 +20,11 @@ namespace Excecoes
             {
                 Console.WriteLine(" Division by zero is not allowed. ");
             }
+
+            catch (FormatException)
+            {
+                Console.WriteLine("Letters are not allowed. ");
+            }
         }
     }
 }

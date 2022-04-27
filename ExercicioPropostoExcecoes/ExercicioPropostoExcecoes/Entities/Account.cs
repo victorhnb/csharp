@@ -26,5 +26,8 @@ namespace ExercicioPropostoExcecoes.Entities
             Balance = balance;
             WithDrawLimit = withDrawLimit;
         }
+
+
+
     }
 }

@@ -28,6 +28,14 @@ namespace ExercicioPropostoExcecoes.Entities
         }
 
 
+        public void Deposit(double amount)
+        {
+            Balance += amount;
+        }
 
+        public void WithDraw(double amount)
+        {
+            Balance -= amount;
+        }
     }
 }

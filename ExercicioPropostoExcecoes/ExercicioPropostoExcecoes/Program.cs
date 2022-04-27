@@ -37,6 +37,11 @@ namespace ExercicioPropostoExcecoes
                 Console.Write("Withdraw error: " + e.Message);
             }
 
+            catch (Exception e)
+            {
+                Console.Write("Unexpected error: " + e.Message);
+            }
+
         }
     }
 }

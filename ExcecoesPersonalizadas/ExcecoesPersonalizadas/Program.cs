@@ -31,18 +31,19 @@ namespace Course
                 reservation.UpdateDates(checkIn, checkOut);
                 Console.WriteLine("Reservation: " + reservation);
             }
-            catch (FormatException e)
+           /* catch (FormatException e)
             {
                 Console.WriteLine("Error in format: " + e.Message);
-            }
+            }*/
+
             catch (DomainException e)
             {
                 Console.WriteLine("Error in reservation: " + e.Message);
             }
-            catch (Exception e)
+           /* catch (Exception e)
             {
                 Console.WriteLine("Unexpected error: " + e.Message);
-            }
+            }*/
         }
     }
 }

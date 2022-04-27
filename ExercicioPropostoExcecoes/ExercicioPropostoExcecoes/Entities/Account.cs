@@ -41,6 +41,11 @@ namespace ExercicioPropostoExcecoes.Entities
                 throw new DomainException("The amount exceeds withdraw Limit");
             }
 
+            else if (amount < 0) {
+
+                throw new DomainException("Amount can not be negative. ");
+            }
+
             else if  (amount > Balance) {
 
                 throw new DomainException("Not enought balance. ");

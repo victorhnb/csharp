@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExercicioPropostoExcecoes.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,13 +14,13 @@ namespace ExercicioPropostoExcecoes.Entities
         public string Holder { get; set; }
         public double Balance { get; set; }
 
-        public int WithDrawLimit { get; set; }
+        public double WithDrawLimit { get; set; }
 
         public Account()
         {
         }
 
-        public Account(int accountNumber, string holder, double balance, int withDrawLimit)
+        public Account(int accountNumber, string holder, double balance, double withDrawLimit)
         {
             AccountNumber = accountNumber;
             Holder = holder;
@@ -35,6 +36,16 @@ namespace ExercicioPropostoExcecoes.Entities
 
         public void WithDraw(double amount)
         {
+            if (amount > WithDrawLimit)
+            {
+                throw new DomainException("The amount exceeds withdraw Limit");
+            }
+
+            else if  (amount > Balance) {
+
+                throw new DomainException("Not enought balance. ");
+            }
+
             Balance -= amount;
         }
     }

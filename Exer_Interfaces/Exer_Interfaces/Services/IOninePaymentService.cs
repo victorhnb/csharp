@@ -1,10 +1,10 @@
 ﻿namespace Exer_Interfaces.Services
 {
-     interface IOninePaymentService
+     interface IOnlinePaymentService
     {
 
-        public double paymentFree(double amount);
-        public double interest(double amount, int months);
+        public double PaymentFree(double amount);
+        public double Interest(double amount, int months);
 
     }
 }

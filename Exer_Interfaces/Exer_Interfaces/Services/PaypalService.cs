@@ -2,16 +2,19 @@
 
 namespace Exer_Interfaces.Services
 {
-    class PaypalService : IOninePaymentService
+    class PaypalService : IOnlinePaymentService
     {
-        public double interest(double amount, int months)
+        private const double FeePercentage = 0.02;
+        private const double MonthlyInterest = 0.01;
+
+        public double Interest(double amount, int months)
         {
-            throw new System.NotImplementedException();
+            return amount * MonthlyInterest * months;
         }
 
-        public double paymentFree(double amount)
+        public double PaymentFree(double amount)
         {
-            throw new System.NotImplementedException();
+            return amount * FeePercentage;
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Globalization;
+using Exer_Interfaces.Services;
+using Exer_Interfaces.Entities;
 
 namespace Exer_Interfaces
 {
@@ -9,13 +11,26 @@ namespace Exer_Interfaces
         {
             Console.WriteLine("Enter contract data");
             Console.Write("Number: ");
-            int number = int.Parse(Console.ReadLine());
+            int contractNumber = int.Parse(Console.ReadLine());
             Console.Write("Date (dd/MM/yyyy): ");
-            DateTime date = DateTime.Parse(Console.ReadLine());
+            DateTime contractDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             Console.Write("Contract value: ");
-            double value = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double contractValue = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             Console.Write("Enter number of installment: ");
-            int numberInstallment = int.Parse(Console.ReadLine());  
+            int numberInstallment = int.Parse(Console.ReadLine());
+
+
+
+            Contract myContract = new Contract(contractNumber, contractDate, contractValue);
+
+            ContractService contractService = new ContractService(new PaypalService());
+            contractService.ProcessContract(myContract, numberInstallment);
+
+            Console.WriteLine("Installments:");
+            foreach (Installment installment in myContract.Installments)
+            {
+                Console.WriteLine(installment);
+            }
 
 
         }

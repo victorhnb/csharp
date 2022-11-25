@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 
 namespace Exer_Interfaces.Entities
 {
@@ -15,6 +12,13 @@ namespace Exer_Interfaces.Entities
         {
             DueDate = dueDate;
             Amount = amount;
+        }
+
+        public override string ToString()
+        {
+            return DueDate.ToString("dd/MM/yyyy")
+                + " - "
+                + Amount.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
